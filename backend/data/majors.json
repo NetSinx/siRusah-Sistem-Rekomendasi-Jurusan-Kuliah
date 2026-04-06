@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1,
+        "name": "Teknik Informatika",
+        "description": "Fokus pada pengembangan perangkat lunak, algoritma, dan teknologi komputasi.",
+        "profile": [5, 4, 3, 2, 2, 3, 4, 2, 5, 2, 4, 4, 3, 5, 2, 3, 3, 3, 4, 2]
+    },
+    {
+        "id": 2,
+        "name": "Kedokteran",
+        "description": "Mempelajari ilmu medis untuk mendiagnosis, mengobati, dan mencegah penyakit.",
+        "profile": [4, 4, 4, 4, 2, 5, 4, 4, 3, 2, 5, 4, 5, 5, 3, 5, 4, 3, 3, 4]
+    },
+    {
+        "id": 3,
+        "name": "Psikologi",
+        "description": "Ilmu yang mempelajari perilaku manusia, pikiran, dan proses mental.",
+        "profile": [3, 2, 4, 2, 2, 5, 5, 2, 2, 2, 4, 3, 4, 4, 4, 3, 3, 3, 2, 5]
+    },
+    {
+        "id": 4,
+        "name": "Ilmu Komunikasi",
+        "description": "Fokus pada proses penyampaian pesan, media, dan hubungan antar manusia.",
+        "profile": [2, 3, 5, 3, 3, 5, 3, 2, 3, 3, 2, 3, 3, 3, 5, 2, 4, 4, 2, 4]
+    },
+    {
+        "id": 5,
+        "name": "Hukum",
+        "description": "Mempelajari sistem peradilan, perundang-undangan, dan advokasi.",
+        "profile": [4, 2, 5, 2, 2, 4, 3, 2, 2, 2, 3, 4, 5, 5, 5, 2, 4, 3, 2, 5]
+    },
+    {
+        "id": 6,
+        "name": "Akuntansi",
+        "description": "Mempelajari pencatatan, klasifikasi, dan pelaporan keuangan.",
+        "profile": [5, 2, 3, 2, 2, 3, 4, 2, 3, 2, 2, 5, 3, 4, 2, 2, 3, 2, 2, 2]
+    },
+    {
+        "id": 7,
+        "name": "Manajemen",
+        "description": "Fokus pada pengelolaan organisasi, bisnis, sumber daya manusia, dan keuangan.",
+        "profile": [4, 2, 3, 2, 2, 5, 4, 2, 3, 2, 3, 4, 3, 4, 4, 2, 5, 3, 2, 3]
+    },
+    {
+        "id": 8,
+        "name": "Teknik Sipil",
+        "description": "Mempelajari perancangan, pembangunan, dan pemeliharaan infrastruktur.",
+        "profile": [5, 5, 2, 4, 2, 3, 3, 3, 4, 2, 4, 3, 3, 5, 2, 3, 4, 2, 5, 3]
+    },
+    {
+        "id": 9,
+        "name": "Arsitektur",
+        "description": "Fokus pada desain bangunan, tata ruang, dan estetika struktur.",
+        "profile": [4, 5, 2, 3, 3, 3, 3, 2, 3, 5, 3, 3, 3, 4, 3, 2, 3, 2, 4, 2]
+    },
+    {
+        "id": 10,
+        "name": "Sastra Inggris",
+        "description": "Mempelajari bahasa, sastra, dan budaya negara berbahasa Inggris.",
+        "profile": [2, 2, 5, 2, 3, 4, 3, 2, 2, 3, 2, 2, 4, 3, 4, 2, 2, 5, 2, 3]
+    },
+    {
+        "id": 11,
+        "name": "Hubungan Internasional",
+        "description": "Mempelajari diplomasi, politik global, dan kerja sama antar negara.",
+        "profile": [3, 2, 5, 2, 2, 5, 3, 2, 2, 2, 3, 3, 4, 4, 5, 2, 4, 5, 2, 5]
+    },
+    {
+        "id": 12,
+        "name": "Desain Komunikasi Visual (DKV)",
+        "description": "Mempelajari penyampaian pesan melalui elemen visual dan desain grafis.",
+        "profile": [2, 5, 3, 3, 3, 3, 3, 2, 4, 5, 2, 2, 2, 3, 3, 2, 2, 3, 2, 3]
+    },
+    {
+        "id": 13,
+        "name": "Biologi",
+        "description": "Ilmu yang mempelajari organisme hidup dan lingkungan sekitarnya.",
+        "profile": [4, 3, 3, 3, 2, 2, 3, 5, 3, 2, 5, 4, 4, 4, 2, 5, 2, 2, 3, 3]
+    },
+    {
+        "id": 14,
+        "name": "Teknik Mesin",
+        "description": "Fokus pada perancangan, analisis, dan manufaktur sistem mekanik.",
+        "profile": [5, 4, 2, 5, 2, 3, 3, 2, 4, 2, 4, 3, 3, 5, 2, 4, 3, 2, 5, 2]
+    },
+    {
+        "id": 15,
+        "name": "Ilmu Keperawatan",
+        "description": "Mempelajari perawatan pasien, kesehatan masyarakat, dan medis dasar.",
+        "profile": [3, 2, 3, 4, 2, 5, 3, 3, 2, 2, 4, 4, 4, 3, 3, 4, 3, 2, 2, 4]
+    },
+    {
+        "id": 16,
+        "name": "Teknik Industri",
+        "description": "Fokus pada optimasi sistem kompleks, proses, dan rantai pasok.",
+        "profile": [5, 4, 3, 3, 2, 4, 3, 2, 4, 2, 4, 4, 3, 5, 3, 3, 5, 3, 4, 3]
+    },
+    {
+        "id": 17,
+        "name": "Ilmu Politik",
+        "description": "Mempelajari sistem pemerintahan, kebijakan publik, dan perilaku politik.",
+        "profile": [3, 2, 5, 2, 2, 4, 3, 2, 2, 2, 3, 3, 4, 4, 5, 2, 4, 3, 2, 5]
+    },
+    {
+        "id": 18,
+        "name": "Pendidikan Matematika",
+        "description": "Fokus pada penguasaan matematika dan metode pengajarannya.",
+        "profile": [5, 3, 4, 2, 2, 4, 3, 2, 3, 2, 3, 4, 4, 5, 4, 2, 3, 2, 3, 2]
+    },
+    {
+        "id": 19,
+        "name": "Pariwisata",
+        "description": "Mempelajari manajemen destinasi wisata, perhotelan, dan layanan turis.",
+        "profile": [2, 3, 4, 3, 2, 5, 3, 3, 2, 3, 2, 3, 3, 3, 4, 2, 4, 5, 2, 3]
+    },
+    {
+        "id": 20,
+        "name": "Ilmu Gizi",
+        "description": "Mempelajari hubungan antara makanan, nutrisi, dan kesehatan tubuh.",
+        "profile": [4, 2, 3, 3, 2, 4, 3, 4, 2, 2, 5, 4, 4, 4, 3, 5, 3, 2, 3, 4]
+    }
+]
