@@ -18,7 +18,13 @@ export const QUESTIONS = [
   "Saya berbakat dalam memimpin sebuah kelompok dan mengorganisir suatu acara.",
   "Saya tertarik mempelajari bahasa asing dan budaya dari negara lain.",
   "Saya mudah memahami konsep fisika dan prinsip-prinsip mesin atau mekanika.",
-  "Saya tertarik pada isu-isu sosial, politik, dan cara menyejahterakan masyarakat."
+  "Saya tertarik pada isu-isu sosial, politik, dan cara menyejahterakan masyarakat.",
+  "Saya senang membimbing, mengajari, atau berinteraksi dengan anak-anak secara sabar.",
+  "Saya memiliki minat besar untuk menguasai tata bahasa (grammar) dan sastra bahasa asing, terutama bahasa Inggris.",
+  "Saya sangat tertarik mendalami tata bahasa dan sastra bahasa Indonesia serta mengajarkannya.",
+  "Saya suka mempelajari secara mendalam rentetan peristiwa masa lalu, peradaban, dan sejarah manusia.",
+  "Saya memiliki rasa keingintahuan yang tinggi terhadap hukum alam semesta, energi, dan pergerakan materi.",
+  "Saya tertarik mempelajari struktur, sifat, dan reaksi dari berbagai zat atau molekul kimia."
 ];
 
 export const OPTIONS = [

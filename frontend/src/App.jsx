@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   Box,
   Button,
@@ -19,6 +18,7 @@ import {
   Divider
 } from '@chakra-ui/react';
 import { ArrowRight, ArrowLeft, Send, RefreshCcw, Quote, Star, Trophy, GraduationCap, Code, Stethoscope, Scale, Palette, Briefcase, Calculator, FlaskConical, HardHat, Globe, BookOpen } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { QUESTIONS, OPTIONS } from './utils/constants';
 import { useAppHandlers } from './utils/useAppHandlers';
 
@@ -77,34 +77,41 @@ function App() {
           </Box>
 
           <Container maxW="4xl" zIndex="1" centerContent>
-            <VStack spacing={8} textAlign="center" color="white">
-              <Badge colorScheme="whiteAlpha" bg="whiteAlpha.300" px={4} py={2} rounded="full" fontSize="sm" fontWeight="bold" letterSpacing="wide">
-                MASA DEPANMU DIMULAI DI SINI
-              </Badge>
-              <Heading size={{ base: "2xl", md: "4xl" }} fontWeight="extrabold" textShadow="0 2px 4px rgba(0,0,0,0.2)" lineHeight="tight">
-                Temukan Jurusan Kuliahmu!
-              </Heading>
-              <Text fontSize={{ base: "lg", md: "2xl" }} maxW="2xl" textShadow="0 1px 2px rgba(0,0,0,0.2)" opacity={0.9}>
-                Sistem rekomendasi ini menggunakan analisis kecerdasan majemuk dan minat untuk menemukan program studi yang paling sesuai dengan potensimu.
-              </Text>
-              <Button
-                mt={4}
-                bg="white"
-                color="brand.600"
-                size="lg"
-                fontSize="xl"
-                px={12}
-                py={8}
-                rounded="full"
-                rightIcon={<ArrowRight size={24} />}
-                onClick={handleStart}
-                boxShadow="2xl"
-                _hover={{ transform: 'translateY(-4px)', boxShadow: 'dark-lg', bg: 'gray.50' }}
-                transition="all 0.3s"
-              >
-                Mulai Kuisioner
-              </Button>
-            </VStack>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, margin: "0px" }}
+              transition={{ duration: 1 }}
+            >
+              <VStack spacing={8} textAlign="center" color="white">
+                <Badge colorScheme="whiteAlpha" bg="whiteAlpha.300" px={4} py={2} rounded="full" fontSize="sm" fontWeight="bold" letterSpacing="wide">
+                  MASA DEPANMU DIMULAI DI SINI
+                </Badge>
+                <Heading size={{ base: "2xl", md: "4xl" }} fontWeight="extrabold" textShadow="0 2px 4px rgba(0,0,0,0.2)" lineHeight="tight">
+                  Temukan Jurusan Kuliahmu!
+                </Heading>
+                <Text fontSize={{ base: "lg", md: "2xl" }} maxW="2xl" textShadow="0 1px 2px rgba(0,0,0,0.2)" opacity={0.9}>
+                  Sistem rekomendasi ini menggunakan analisis kecerdasan majemuk dan minat untuk menemukan program studi yang paling sesuai dengan potensimu.
+                </Text>
+                <Button
+                  mt={4}
+                  bg="white"
+                  color="brand.600"
+                  size="lg"
+                  fontSize="xl"
+                  px={12}
+                  py={8}
+                  rounded="full"
+                  rightIcon={<ArrowRight size={24} />}
+                  onClick={handleStart}
+                  boxShadow="2xl"
+                  _hover={{ transform: 'translateY(-4px)', boxShadow: 'dark-lg', bg: 'gray.50' }}
+                  transition="all 0.3s"
+                >
+                  Mulai Kuisioner
+                </Button>
+              </VStack>
+            </motion.div>
           </Container>
           
           <Box position="absolute" top="-10%" left="-5%" w={{base: "200px", md: "300px"}} h={{base: "200px", md: "300px"}} bg="whiteAlpha.200" rounded="full" filter="blur(40px)" />
@@ -113,41 +120,69 @@ function App() {
 
         <Container maxW="5xl" py={{ base: 16, md: 24 }}>
           <VStack spacing={{ base: 12, md: 16 }}>
-            <VStack spacing={4} textAlign="center" maxW="2xl">
-              <Heading size="xl" color="gray.800">Cara Kerja Aplikasi</Heading>
-              <Text color="gray.600" fontSize="lg">Hanya butuh 3 langkah mudah untuk menemukan jurusan yang sesuai dengan kepribadian dan minatmu.</Text>
-            </VStack>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, margin: "-100px" }}
+              transition={{ duration: 0.6 }}
+            >
+              <VStack spacing={4} textAlign="center" maxW="2xl">
+                <Heading size="xl" color="gray.800">Cara Kerja Aplikasi</Heading>
+                <Text color="gray.600" fontSize="lg">Hanya butuh 3 langkah mudah untuk menemukan jurusan yang sesuai dengan kepribadian dan minatmu.</Text>
+              </VStack>
+            </motion.div>
 
             <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10} w="full">
-              <Card bg="white" shadow="md" borderWidth="1px" borderColor="gray.100" rounded="2xl" transition="all 0.3s" _hover={{ transform: 'translateY(-5px)', shadow: 'xl' }}>
-                <CardBody p={8} textAlign="center">
-                  <Flex w={16} h={16} bg="brand.50" color="brand.600" rounded="full" align="center" justify="center" mx="auto" mb={6}>
-                    <Text fontSize="2xl" fontWeight="bold">1</Text>
-                  </Flex>
-                  <Heading size="md" mb={4} color="gray.800">Isi Kuisioner</Heading>
-                  <Text color="gray.600">Jawab 20 pertanyaan sederhana mengenai minat, kebiasaan, dan kemampuanmu sehari-hari.</Text>
-                </CardBody>
-              </Card>
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
+                <Card bg="white" shadow="md" borderWidth="1px" borderColor="gray.100" rounded="2xl" transition="all 0.3s" _hover={{ transform: 'translateY(-5px)', shadow: 'xl' }}>
+                  <CardBody p={8} textAlign="center">
+                    <Flex w={16} h={16} bg="brand.50" color="brand.600" rounded="full" align="center" justify="center" mx="auto" mb={6}>
+                      <Text fontSize="2xl" fontWeight="bold">1</Text>
+                    </Flex>
+                    <Heading size="md" mb={4} color="gray.800">Isi Kuisioner</Heading>
+                    <Text color="gray.600">Jawab 20 pertanyaan sederhana mengenai minat, kebiasaan, dan kemampuanmu sehari-hari.</Text>
+                  </CardBody>
+                </Card>
+              </motion.div>
 
-              <Card bg="white" shadow="md" borderWidth="1px" borderColor="gray.100" rounded="2xl" transition="all 0.3s" _hover={{ transform: 'translateY(-5px)', shadow: 'xl' }}>
-                <CardBody p={8} textAlign="center">
-                  <Flex w={16} h={16} bg="brand.50" color="brand.600" rounded="full" align="center" justify="center" mx="auto" mb={6}>
-                    <Text fontSize="2xl" fontWeight="bold">2</Text>
-                  </Flex>
-                  <Heading size="md" mb={4} color="gray.800">Sistem Menganalisis</Heading>
-                  <Text color="gray.600">Algoritma kami akan mencocokkan profilmu dengan database program studi yang ada.</Text>
-                </CardBody>
-              </Card>
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                <Card bg="white" shadow="md" borderWidth="1px" borderColor="gray.100" rounded="2xl" transition="all 0.3s" _hover={{ transform: 'translateY(-5px)', shadow: 'xl' }}>
+                  <CardBody p={8} textAlign="center">
+                    <Flex w={16} h={16} bg="brand.50" color="brand.600" rounded="full" align="center" justify="center" mx="auto" mb={6}>
+                      <Text fontSize="2xl" fontWeight="bold">2</Text>
+                    </Flex>
+                    <Heading size="md" mb={4} color="gray.800">Sistem Menganalisis</Heading>
+                    <Text color="gray.600">Algoritma kami akan mencocokkan profilmu dengan database program studi yang ada.</Text>
+                  </CardBody>
+                </Card>
+              </motion.div>
 
-              <Card bg="white" shadow="md" borderWidth="1px" borderColor="gray.100" rounded="2xl" transition="all 0.3s" _hover={{ transform: 'translateY(-5px)', shadow: 'xl' }}>
-                <CardBody p={8} textAlign="center">
-                  <Flex w={16} h={16} bg="brand.50" color="brand.600" rounded="full" align="center" justify="center" mx="auto" mb={6}>
-                    <Text fontSize="2xl" fontWeight="bold">3</Text>
-                  </Flex>
-                  <Heading size="md" mb={4} color="gray.800">Dapatkan Rekomendasi</Heading>
-                  <Text color="gray.600">Terima 3 rekomendasi jurusan kuliah terbaik beserta tingkat kecocokannya dengan potensimu.</Text>
-                </CardBody>
-              </Card>
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+              >
+                <Card bg="white" shadow="md" borderWidth="1px" borderColor="gray.100" rounded="2xl" transition="all 0.3s" _hover={{ transform: 'translateY(-5px)', shadow: 'xl' }}>
+                  <CardBody p={8} textAlign="center">
+                    <Flex w={16} h={16} bg="brand.50" color="brand.600" rounded="full" align="center" justify="center" mx="auto" mb={6}>
+                      <Text fontSize="2xl" fontWeight="bold">3</Text>
+                    </Flex>
+                    <Heading size="md" mb={4} color="gray.800">Dapatkan Rekomendasi</Heading>
+                    <Text color="gray.600">Terima 3 rekomendasi jurusan kuliah terbaik beserta tingkat kecocokannya dengan potensimu.</Text>
+                  </CardBody>
+                </Card>
+              </motion.div>
             </SimpleGrid>
           </VStack>
         </Container>
@@ -156,11 +191,18 @@ function App() {
 
         <Box bg="white" py={{ base: 16, md: 24 }}>
           <Container maxW="4xl" textAlign="center">
-            <Icon as={Quote} w={12} h={12} color="brand.300" mb={6} />
-            <Heading size={{ base: "md", md: "lg" }} color="gray.800" lineHeight="tall" mb={6} fontWeight="medium" fontStyle="italic">
-              "Pendidikan adalah senjata paling mematikan di dunia, karena dengan pendidikan, Anda dapat mengubah dunia."
-            </Heading>
-            <Text fontSize="lg" color="gray.500" fontWeight="bold">— Nelson Mandela</Text>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: false, margin: "-100px" }}
+              transition={{ duration: 0.6 }}
+            >
+              <Icon as={Quote} w={12} h={12} color="brand.300" mb={6} />
+              <Heading size={{ base: "md", md: "lg" }} color="gray.800" lineHeight="tall" mb={6} fontWeight="medium" fontStyle="italic">
+                "Pendidikan adalah senjata paling mematikan di dunia, karena dengan pendidikan, Anda dapat mengubah dunia."
+              </Heading>
+              <Text fontSize="lg" color="gray.500" fontWeight="bold">— Nelson Mandela</Text>
+            </motion.div>
           </Container>
         </Box>
 
@@ -168,55 +210,76 @@ function App() {
 
         <Container maxW="5xl" py={{ base: 16, md: 24 }}>
           <VStack spacing={12}>
-            <VStack spacing={4} textAlign="center">
-              <Heading size="xl" color="gray.800">Cerita Mereka</Heading>
-              <Text color="gray.600" fontSize="lg">Apa kata mereka yang sudah mencoba sistem ini?</Text>
-            </VStack>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, margin: "-100px" }}
+              transition={{ duration: 0.6 }}
+            >
+              <VStack spacing={4} textAlign="center">
+                <Heading size="xl" color="gray.800">Cerita Mereka</Heading>
+                <Text color="gray.600" fontSize="lg">Apa kata mereka yang sudah mencoba sistem ini?</Text>
+              </VStack>
+            </motion.div>
 
             <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} w="full">
-              <Card bg="gray.50" shadow="none" borderWidth="1px" borderColor="gray.200" rounded="2xl">
-                <CardBody p={8}>
-                  <HStack spacing={1} color="yellow.400" mb={4}>
-                    <Icon as={Star} fill="currentColor" />
-                    <Icon as={Star} fill="currentColor" />
-                    <Icon as={Star} fill="currentColor" />
-                    <Icon as={Star} fill="currentColor" />
-                    <Icon as={Star} fill="currentColor" />
-                  </HStack>
-                  <Text color="gray.700" fontSize="md" mb={6} fontStyle="italic" lineHeight="tall">
-                    "Awalnya saya bingung mau masuk jurusan apa karena suka seni tapi juga suka hitung-hitungan. Setelah mengisi kuisioner ini, saya mendapat rekomendasi Arsitektur, dan ternyata itu sangat cocok dengan saya!"
-                  </Text>
-                  <HStack spacing={4}>
-                    <Avatar name="Budi Santoso" bg="brand.500" color="white" />
-                    <Box>
-                      <Text fontWeight="bold" color="gray.800">Budi Santoso</Text>
-                      <Text fontSize="sm" color="gray.500">Calon Mahasiswa Baru</Text>
-                    </Box>
-                  </HStack>
-                </CardBody>
-              </Card>
+              <motion.div
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
+                <Card bg="gray.50" shadow="none" borderWidth="1px" borderColor="gray.200" rounded="2xl">
+                  <CardBody p={8}>
+                    <HStack spacing={1} color="yellow.400" mb={4}>
+                      <Icon as={Star} fill="currentColor" />
+                      <Icon as={Star} fill="currentColor" />
+                      <Icon as={Star} fill="currentColor" />
+                      <Icon as={Star} fill="currentColor" />
+                      <Icon as={Star} fill="currentColor" />
+                    </HStack>
+                    <Text color="gray.700" fontSize="md" mb={6} fontStyle="italic" lineHeight="tall">
+                      "Awalnya saya bingung mau masuk jurusan apa karena suka seni tapi juga suka hitung-hitungan. Setelah mengisi kuisioner ini, saya mendapat rekomendasi Arsitektur, dan ternyata itu sangat cocok dengan saya!"
+                    </Text>
+                    <HStack spacing={4}>
+                      <Avatar name="Budi Santoso" bg="brand.500" color="white" />
+                      <Box>
+                        <Text fontWeight="bold" color="gray.800">Budi Santoso</Text>
+                        <Text fontSize="sm" color="gray.500">Calon Mahasiswa Baru</Text>
+                      </Box>
+                    </HStack>
+                  </CardBody>
+                </Card>
+              </motion.div>
 
-              <Card bg="gray.50" shadow="none" borderWidth="1px" borderColor="gray.200" rounded="2xl">
-                <CardBody p={8}>
-                  <HStack spacing={1} color="yellow.400" mb={4}>
-                    <Icon as={Star} fill="currentColor" />
-                    <Icon as={Star} fill="currentColor" />
-                    <Icon as={Star} fill="currentColor" />
-                    <Icon as={Star} fill="currentColor" />
-                    <Icon as={Star} fill="currentColor" />
-                  </HStack>
-                  <Text color="gray.700" fontSize="md" mb={6} fontStyle="italic" lineHeight="tall">
-                    "Hasilnya sangat akurat! Sistem merekomendasikan Ilmu Komputer, yang memang selama ini menjadi ketertarikan terpendam saya. Penjelasannya juga membantu saya meyakinkan orang tua."
-                  </Text>
-                  <HStack spacing={4}>
-                    <Avatar name="Andi Wijaya" bg="purple.500" color="white" />
-                    <Box>
-                      <Text fontWeight="bold" color="gray.800">Andi Wijaya</Text>
-                      <Text fontSize="sm" color="gray.500">Siswa SMA Kelas 12</Text>
-                    </Box>
-                  </HStack>
-                </CardBody>
-              </Card>
+              <motion.div
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                <Card bg="gray.50" shadow="none" borderWidth="1px" borderColor="gray.200" rounded="2xl">
+                  <CardBody p={8}>
+                    <HStack spacing={1} color="yellow.400" mb={4}>
+                      <Icon as={Star} fill="currentColor" />
+                      <Icon as={Star} fill="currentColor" />
+                      <Icon as={Star} fill="currentColor" />
+                      <Icon as={Star} fill="currentColor" />
+                      <Icon as={Star} fill="currentColor" />
+                    </HStack>
+                    <Text color="gray.700" fontSize="md" mb={6} fontStyle="italic" lineHeight="tall">
+                      "Hasilnya sangat akurat! Sistem merekomendasikan Ilmu Komputer, yang memang selama ini menjadi ketertarikan terpendam saya. Penjelasannya juga membantu saya meyakinkan orang tua."
+                    </Text>
+                    <HStack spacing={4}>
+                      <Avatar name="Andi Wijaya" bg="purple.500" color="white" />
+                      <Box>
+                        <Text fontWeight="bold" color="gray.800">Andi Wijaya</Text>
+                        <Text fontSize="sm" color="gray.500">Siswa SMA Kelas 12</Text>
+                      </Box>
+                    </HStack>
+                  </CardBody>
+                </Card>
+              </motion.div>
             </SimpleGrid>
           </VStack>
         </Container>
@@ -226,26 +289,33 @@ function App() {
           <Box position="absolute" bottom="-20%" right="-5%" w={{base: "150px", md: "250px"}} h={{base: "150px", md: "250px"}} bg="purple.500" opacity="0.3" rounded="full" filter="blur(30px)" />
           
           <Container maxW="3xl" position="relative" zIndex="1">
-            <Heading size="xl" mb={6}>Sudah Siap Mengetahui Jurusanmu?</Heading>
-            <Text fontSize="lg" color="whiteAlpha.900" mb={10}>
-              Jangan biarkan kebingungan menghalangi potensi besarmu. Mulai tes sekarang, gratis!
-            </Text>
-            <Button
-              bg="white"
-              color="brand.600"
-              size="lg"
-              fontSize="xl"
-              px={10}
-              py={8}
-              rounded="full"
-              rightIcon={<ArrowRight size={24} />}
-              onClick={handleStart}
-              boxShadow="xl"
-              _hover={{ transform: 'scale(1.05)', bg: 'gray.50', boxShadow: '2xl' }}
-              transition="all 0.3s"
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, margin: "-100px" }}
+              transition={{ duration: 0.6 }}
             >
-              Coba Tes Sekarang
-            </Button>
+              <Heading size="xl" mb={6}>Sudah Siap Mengetahui Jurusanmu?</Heading>
+              <Text fontSize="lg" color="whiteAlpha.900" mb={10}>
+                Jangan biarkan kebingungan menghalangi potensi besarmu. Mulai tes sekarang, gratis!
+              </Text>
+              <Button
+                bg="white"
+                color="brand.600"
+                size="lg"
+                fontSize="xl"
+                px={10}
+                py={8}
+                rounded="full"
+                rightIcon={<ArrowRight size={24} />}
+                onClick={handleStart}
+                boxShadow="xl"
+                _hover={{ transform: 'scale(1.05)', bg: 'gray.50', boxShadow: '2xl' }}
+                transition="all 0.3s"
+              >
+                Coba Tes Sekarang
+              </Button>
+            </motion.div>
           </Container>
         </Box>
       </Box>
@@ -272,206 +342,232 @@ function App() {
       >
         
         {step === 'quiz' && (
-          <Card w="full" h="full" maxH="full" display="flex" flexDirection="column" shadow="2xl" rounded="2xl" overflow="hidden" borderWidth="1px" borderColor="gray.100" bg="white">
-            <Progress 
-              value={((currentQuestionIndex + 1) / QUESTIONS.length) * 100} 
-              colorScheme="brand" 
-              size="sm" 
-              bg="gray.100" 
-              flexShrink={0}
-            />
-            <CardBody flex="1" display="flex" flexDirection="column" overflow="hidden" py={{ base: 6, md: 10 }} px={{ base: 6, md: 10 }}>
-              <Box mb={3} textAlign="center" flexShrink={0}>
-                <Heading size="lg" lineHeight="tall" color="gray.800">
-                  {QUESTIONS[currentQuestionIndex]}
-                </Heading>
-              </Box>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            style={{ width: "100%", height: "100%" }}
+          >
+            <Card w="full" h="full" maxH="full" display="flex" flexDirection="column" shadow="2xl" rounded="2xl" overflow="hidden" borderWidth="1px" borderColor="gray.100" bg="white">
+              <Progress 
+                value={((currentQuestionIndex + 1) / QUESTIONS.length) * 100} 
+                colorScheme="brand" 
+                size="sm" 
+                bg="gray.100" 
+                flexShrink={0}
+              />
+              <CardBody flex="1" display="flex" flexDirection="column" overflow="hidden" py={{ base: 6, md: 10 }} px={{ base: 6, md: 10 }}>
+                <Box mb={3} textAlign="center" flexShrink={0}>
+                  <Heading size="lg" lineHeight="tall" color="gray.800">
+                    {QUESTIONS[currentQuestionIndex]}
+                  </Heading>
+                </Box>
 
-              <Box flex="1" overflowY="auto" bg="gray.50" borderWidth="1px" borderColor="gray.200" p={8} rounded="2xl" mb={2} height={1000}>
-                <Text textAlign="center" mb={6} fontSize="md" color="gray.600" fontWeight="medium">
-                  Seberapa setuju kamu dengan pernyataan di atas?
-                </Text>
-                
-                <VStack spacing={3} w="full" align="stretch">
-                  {OPTIONS.map((option) => {
-                    const isSelected = answers[currentQuestionIndex] === option.value;
-                    return (
-                      <Button
-                        key={option.value}
-                        w="full"
-                        size="lg"
-                        justifyContent="flex-start"
-                        px={6}
-                        py={6}
-                        variant={isSelected ? "solid" : "outline"}
-                        colorScheme={isSelected ? "brand" : "gray"}
-                        borderColor={isSelected ? "brand.500" : "gray.300"}
-                        bg={isSelected ? "brand.500" : "white"}
-                        color={isSelected ? "white" : "gray.700"}
-                        _hover={{ 
-                          bg: isSelected ? "brand.600" : "gray.50",
-                          borderColor: isSelected ? "brand.600" : "gray.400"
-                        }}
-                        onClick={() => handleAnswerChange(option.value)}
-                        fontWeight="medium"
-                        fontSize="md"
-                        boxShadow={isSelected ? "md" : "none"}
-                      >
-                        <Flex w="full" justify="space-between" align="center">
-                          <Text>{option.label}</Text>
-                          {isSelected && (
-                            <Box w={3} h={3} rounded="full" bg="white" />
-                          )}
-                        </Flex>
-                      </Button>
-                    );
-                  })}
-                </VStack>
-              </Box>
+                <Box flex="1" overflowY="auto" bg="gray.50" borderWidth="1px" borderColor="gray.200" p={8} rounded="2xl" mb={2} height={1000}>
+                  <Text textAlign="center" mb={6} fontSize="md" color="gray.600" fontWeight="medium">
+                    Seberapa setuju kamu dengan pernyataan di atas?
+                  </Text>
+                  
+                  <VStack spacing={3} w="full" align="stretch">
+                    {OPTIONS.map((option) => {
+                      const isSelected = answers[currentQuestionIndex] === option.value;
+                      return (
+                        <Button
+                          key={option.value}
+                          w="full"
+                          size="lg"
+                          justifyContent="flex-start"
+                          px={6}
+                          py={6}
+                          variant={isSelected ? "solid" : "outline"}
+                          colorScheme={isSelected ? "brand" : "gray"}
+                          borderColor={isSelected ? "brand.500" : "gray.300"}
+                          bg={isSelected ? "brand.500" : "white"}
+                          color={isSelected ? "white" : "gray.700"}
+                          _hover={{ 
+                            bg: isSelected ? "brand.600" : "gray.50",
+                            borderColor: isSelected ? "brand.600" : "gray.400"
+                          }}
+                          onClick={() => handleAnswerChange(option.value)}
+                          fontWeight="medium"
+                          fontSize="md"
+                          boxShadow={isSelected ? "md" : "none"}
+                        >
+                          <Flex w="full" justify="space-between" align="center">
+                            <Text>{option.label}</Text>
+                            {isSelected && (
+                              <Box w={3} h={3} rounded="full" bg="white" />
+                            )}
+                          </Flex>
+                        </Button>
+                      );
+                    })}
+                  </VStack>
+                </Box>
 
-              <HStack justify="space-between" mt="auto" flexShrink={0}>
-                <Button 
-                  variant="outline" 
-                  size="lg"
-                  leftIcon={<ArrowLeft size={18} />} 
-                  onClick={handlePrev}
-                  isDisabled={currentQuestionIndex === 0}
-                >
-                  Kembali
-                </Button>
-
-                {currentQuestionIndex === QUESTIONS.length - 1 ? (
+                <HStack justify="space-between" mt="auto" flexShrink={0}>
                   <Button 
-                    colorScheme="brand" 
+                    variant="outline" 
                     size="lg"
-                    rightIcon={loading ? <Spinner size="sm"/> : <Send size={18} />} 
-                    onClick={handleSubmit}
-                    isLoading={loading}
-                    loadingText="Menganalisis..."
-                    isDisabled={isCurrentAnswerEmpty}
+                    leftIcon={<ArrowLeft size={18} />} 
+                    onClick={handlePrev}
+                    isDisabled={currentQuestionIndex === 0}
                   >
-                    Lihat Hasil
+                    Kembali
                   </Button>
-                ) : (
-                  <Button 
-                    colorScheme="brand" 
-                    size="lg"
-                    rightIcon={<ArrowRight size={18} />} 
-                    onClick={handleNext}
-                    isDisabled={isCurrentAnswerEmpty}
-                  >
-                    Selanjutnya
-                  </Button>
-                )}
-              </HStack>
-            </CardBody>
-          </Card>
+
+                  {currentQuestionIndex === QUESTIONS.length - 1 ? (
+                    <Button 
+                      colorScheme="brand" 
+                      size="lg"
+                      rightIcon={loading ? <Spinner size="sm"/> : <Send size={18} />} 
+                      onClick={handleSubmit}
+                      isLoading={loading}
+                      loadingText="Menganalisis..."
+                      isDisabled={isCurrentAnswerEmpty}
+                    >
+                      Lihat Hasil
+                    </Button>
+                  ) : (
+                    <Button 
+                      colorScheme="brand" 
+                      size="lg"
+                      rightIcon={<ArrowRight size={18} />} 
+                      onClick={handleNext}
+                      isDisabled={isCurrentAnswerEmpty}
+                    >
+                      Selanjutnya
+                    </Button>
+                  )}
+                </HStack>
+              </CardBody>
+            </Card>
+          </motion.div>
         )}
 
         {step === 'result' && (
-          <Card w="full" shadow="2xl" rounded="2xl" overflow="hidden" borderWidth="1px" borderColor="gray.100" bg="white">
-            <Box h="3" bg="brand.500" />
-            <CardBody py={{ base: 6, md: 10 }} px={{ base: 6, md: 10 }}>
-              <VStack spacing={2} mb={10}>
-                <Heading size="xl" textAlign="center" color="gray.800">
-                  Rekomendasi Jurusan
-                </Heading>
-                <Text textAlign="center" color="gray.600" fontSize="lg">
-                  Berdasarkan profil yang kamu isi, berikut adalah rekomendasi jurusan yang paling sesuai:
-                </Text>
-              </VStack>
-
-              <VStack spacing={6} align="stretch" mb={10}>
-                {recommendations.slice(0, 3).map((rec, index) => {
-                  const isFirst = index === 0;
-                  const isSecond = index === 1;
-                  const isThird = index === 2;
-                  
-                  let iconColor = "";
-                  if (isFirst) iconColor = "yellow.400";
-                  else if (isSecond) iconColor = "gray.400";
-                  else if (isThird) iconColor = "#8B4513";
-
-                  return (
-                    <Box 
-                      key={rec.id} 
-                      p={8} 
-                      borderWidth="2px" 
-                      borderColor={isFirst ? "brand.300" : isSecond ? "gray.300" : isThird ? "orange.200" : "gray.100"} 
-                      rounded="2xl" 
-                      bg={isFirst ? "brand.50" : isSecond ? "gray.50" : isThird ? "orange.50" : "white"}
-                      position="relative"
-                      overflow="hidden"
-                      boxShadow={isFirst ? "md" : "sm"}
-                      transition="all 0.2s"
-                      _hover={{ transform: 'translateY(-2px)', boxShadow: 'lg' }}
-                    >
-                      {isFirst && (
-                        <Box position="absolute" top="0" right="0" bg="brand.500" color="white" px={4} py={1.5} fontSize="sm" fontWeight="bold" borderBottomLeftRadius="xl">
-                          PALING COCOK
-                        </Box>
-                      )}
-                      <HStack justify="space-between" mb={3} align="start">
-                        <HStack align="center" spacing={3}>
-                          <Icon as={Trophy} w={8} h={8} color={iconColor} />
-                          <Heading size="lg" color={isFirst ? "brand.800" : "gray.800"}>
-                            {index + 1}. {rec.name}
-                          </Heading>
-                        </HStack>
-                        <Badge colorScheme={isFirst ? "brand" : "gray"} fontSize="md" px={3} py={1.5} rounded="lg">
-                          {rec.similarity.toFixed(1)}% Cocok
-                        </Badge>
-                      </HStack>
-                      <Text color="gray.600" fontSize="md" lineHeight="tall">
-                        {rec.description}
-                      </Text>
-                    </Box>
-                  );
-                })}
-              </VStack>
-
-              {recommendations.length > 3 && (
-                <Box mb={10}>
-                  <Heading size="md" mb={6} color="gray.700" textAlign="center">
-                    Leaderboard Rekomendasi Lainnya
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            style={{ width: "100%" }}
+          >
+            <Card w="full" shadow="2xl" rounded="2xl" overflow="hidden" borderWidth="1px" borderColor="gray.100" bg="white">
+              <Box h="3" bg="brand.500" />
+              <CardBody py={{ base: 6, md: 10 }} px={{ base: 6, md: 10 }}>
+                <VStack spacing={2} mb={10}>
+                  <Heading size="xl" textAlign="center" color="gray.800">
+                    Rekomendasi Jurusan
                   </Heading>
-                  <VStack spacing={3} align="stretch">
-                    {recommendations.slice(3).map((rec, index) => (
-                      <HStack 
-                        key={rec.id} 
-                        p={4} 
-                        bg="gray.50" 
-                        borderWidth="1px" 
-                        borderColor="gray.200" 
-                        rounded="xl" 
-                        justify="space-between"
-                        _hover={{ bg: "gray.100", transform: 'translateX(4px)' }}
-                        transition="all 0.2s"
-                      >
-                        <HStack spacing={4}>
-                          <Flex w={8} h={8} bg="white" rounded="full" align="center" justify="center" shadow="sm" borderWidth="1px" borderColor="gray.200">
-                            <Text fontWeight="bold" color="gray.500">
-                              {index + 4}
-                            </Text>
-                          </Flex>
-                          <Text fontWeight="bold" color="gray.800">{rec.name}</Text>
-                        </HStack>
-                        <Badge colorScheme="blue" variant="subtle">
-                          {rec.similarity.toFixed(1)}%
-                        </Badge>
-                      </HStack>
-                    ))}
-                  </VStack>
-                </Box>
-              )}
+                  <Text textAlign="center" color="gray.600" fontSize="lg">
+                    Berdasarkan profil yang kamu isi, berikut adalah rekomendasi jurusan yang paling sesuai:
+                  </Text>
+                </VStack>
 
-              <Box textAlign="center">
-                <Button colorScheme="gray" variant="outline" onClick={handleReset} size="lg" px={8}>
-                  Ulangi Kuisioner
-                </Button>
-              </Box>
-            </CardBody>
-          </Card>
+                <VStack spacing={6} align="stretch" mb={10}>
+                  {recommendations.slice(0, 3).map((rec, index) => {
+                    const isFirst = index === 0;
+                    const isSecond = index === 1;
+                    const isThird = index === 2;
+                    
+                    let iconColor = "";
+                    if (isFirst) iconColor = "yellow.400";
+                    else if (isSecond) iconColor = "gray.400";
+                    else if (isThird) iconColor = "#8B4513";
+
+                    return (
+                      <motion.div
+                        key={rec.id}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: index * 0.2 }}
+                      >
+                        <Box 
+                          p={8} 
+                          borderWidth="2px" 
+                          borderColor={isFirst ? "brand.300" : isSecond ? "gray.300" : isThird ? "orange.200" : "gray.100"} 
+                          rounded="2xl" 
+                          bg={isFirst ? "brand.50" : isSecond ? "gray.50" : isThird ? "orange.50" : "white"}
+                          position="relative"
+                          overflow="hidden"
+                          boxShadow={isFirst ? "md" : "sm"}
+                          transition="all 0.2s"
+                          _hover={{ transform: 'translateY(-2px)', boxShadow: 'lg' }}
+                        >
+                          {isFirst && (
+                            <Box position="absolute" top="0" right="0" bg="brand.500" color="white" px={4} py={1.5} fontSize="sm" fontWeight="bold" borderBottomLeftRadius="xl">
+                              PALING COCOK
+                            </Box>
+                          )}
+                          <HStack justify="space-between" mb={3} align="start">
+                            <HStack align="center" spacing={3}>
+                              <Icon as={Trophy} w={8} h={8} color={iconColor} />
+                              <Heading size="lg" color={isFirst ? "brand.800" : "gray.800"}>
+                                {index + 1}. {rec.name}
+                              </Heading>
+                            </HStack>
+                            <Badge colorScheme={isFirst ? "brand" : "gray"} fontSize="md" px={3} py={1.5} rounded="lg">
+                              {rec.similarity.toFixed(1)}% Cocok
+                            </Badge>
+                          </HStack>
+                          <Text color="gray.600" fontSize="md" lineHeight="tall">
+                            {rec.description}
+                          </Text>
+                        </Box>
+                      </motion.div>
+                    );
+                  })}
+                </VStack>
+
+                {recommendations.length > 3 && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.8 }}
+                  >
+                    <Box mb={10}>
+                      <Heading size="md" mb={6} color="gray.700" textAlign="center">
+                        Leaderboard Rekomendasi Lainnya
+                      </Heading>
+                      <VStack spacing={3} align="stretch">
+                        {recommendations.slice(3).map((rec, index) => (
+                          <HStack 
+                            key={rec.id} 
+                            p={4} 
+                            bg="gray.50" 
+                            borderWidth="1px" 
+                            borderColor="gray.200" 
+                            rounded="xl" 
+                            justify="space-between"
+                            _hover={{ bg: "gray.100", transform: 'translateX(4px)' }}
+                            transition="all 0.2s"
+                          >
+                            <HStack spacing={4}>
+                              <Flex w={8} h={8} bg="white" rounded="full" align="center" justify="center" shadow="sm" borderWidth="1px" borderColor="gray.200">
+                                <Text fontWeight="bold" color="gray.500">
+                                  {index + 4}
+                                </Text>
+                              </Flex>
+                              <Text fontWeight="bold" color="gray.800">{rec.name}</Text>
+                            </HStack>
+                            <Badge colorScheme="blue" variant="subtle">
+                              {rec.similarity.toFixed(1)}%
+                            </Badge>
+                          </HStack>
+                        ))}
+                      </VStack>
+                    </Box>
+                  </motion.div>
+                )}
+
+                <Box textAlign="center">
+                  <Button colorScheme="gray" variant="outline" onClick={handleReset} size="lg" px={8}>
+                    Ulangi Kuisioner
+                  </Button>
+                </Box>
+              </CardBody>
+            </Card>
+          </motion.div>
         )}
 
       </Container>

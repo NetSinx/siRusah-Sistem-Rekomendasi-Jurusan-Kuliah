@@ -1,8 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import json
-import numpy as np
-from sklearn.metrics.pairwise import cosine_similarity
 import os
 
 app = Flask(__name__)
@@ -14,31 +12,57 @@ def load_majors():
     with open(DATA_PATH, 'r') as f:
         return json.load(f)
 
+def calculate_expert_match(user_scores, major_profile):
+    score = 0.0
+    max_score = 0.0
+    
+    for u_val, m_val in zip(user_scores, major_profile):
+        weight = 0.0
+        if m_val == 5:
+            weight = 5.0
+        elif m_val == 4:
+            weight = 3.0
+        elif m_val == 3:
+            weight = 1.0
+            
+        if weight > 0:
+            max_score += weight * 5.0
+            
+            if m_val >= 4 and u_val < m_val:
+                deficit = m_val - u_val
+                penalty = deficit * (1.5 if m_val == 5 else 1.0)
+                earned = max(0, u_val - penalty)
+                score += weight * earned
+            else:
+                score += weight * u_val
+                
+    if max_score == 0:
+        return 0.0
+        
+    return (score / max_score) * 100
+
 @app.route('/api/recommend', methods=['POST'])
 def recommend():
     try:
         user_data = request.json
         user_scores = user_data.get('scores', [])
         
-        if len(user_scores) != 20:
-            return jsonify({'error': 'Invalid number of scores. Expected 20.'}), 400
+        if len(user_scores) != 26:
+            return jsonify({'error': 'Invalid number of scores. Expected 26.'}), 400
             
         majors_data = load_majors()
         
-        user_vector = np.array([user_scores])
-        major_vectors = np.array([m['profile'] for m in majors_data])
-        
-        similarities = cosine_similarity(user_vector, major_vectors)[0]
-        
         results = []
-        for idx, similarity in enumerate(similarities):
+        for major in majors_data:
+            similarity = calculate_expert_match(user_scores, major['profile'])
             results.append({
-                'id': majors_data[idx]['id'],
-                'name': majors_data[idx]['name'],
-                'description': majors_data[idx]['description'],
-                'similarity': float(similarity) * 100
+                'id': major['id'],
+                'name': major['name'],
+                'description': major['description'],
+                'similarity': round(similarity, 2)
             })
             
+        # Urutkan berdasarkan nilai kecocokan tertinggi
         results.sort(key=lambda x: x['similarity'], reverse=True)
         
         return jsonify({'recommendations': results})

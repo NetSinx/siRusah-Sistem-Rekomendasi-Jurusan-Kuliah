@@ -6,7 +6,7 @@ import { QUESTIONS } from './constants';
 export const useAppHandlers = () => {
   const [step, setStep] = useState('intro');
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [answers, setAnswers] = useState(Array(20).fill(null));
+  const [answers, setAnswers] = useState(Array(26).fill(null));
   const [recommendations, setRecommendations] = useState([]);
   const [loading, setLoading] = useState(false);
   const toast = useToast();
@@ -66,7 +66,7 @@ export const useAppHandlers = () => {
   };
 
   const handleReset = () => {
-    setAnswers(Array(20).fill(null));
+    setAnswers(Array(26).fill(null));
     setCurrentQuestionIndex(0);
     setRecommendations([]);
     window.scrollTo(0, 0);
